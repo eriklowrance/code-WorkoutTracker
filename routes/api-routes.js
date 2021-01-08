@@ -3,19 +3,9 @@ const { Workout } = require("../models");
 const db = require("../models");
 
 router.get("/api/workouts", async function (req, res) {
-  try {
-    res.json(await Workout.aggregate([
-        {
-          $addFields: {
-            totalDuration: {
-              $sum: "$exercises.duration",
-            },
-          },
-        },
-      ]));
-  } catch (err) {
-    res.status(500).end();
-  }
+Workout.find().then(function (results) {
+    res.json(results)
+})
 });
 
 router.post("/api/workouts", async function (req, res) {

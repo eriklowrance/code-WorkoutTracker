@@ -98,33 +98,33 @@ let workoutSeed = [
       }
     ]
   },
-//   {
-//     day: new Date(new Date().setDate(new Date().getDate() - 3)),
-//     exercises: [
-//       {
-//         type: "resistance",
-//         name: "Bench Press",
-//         duration: 22,
-//         weight: 300,
-//         reps: 10,
-//         sets: 4
-//       }
-//     ]
-//   },
-//   {
-//     day: new Date(new Date().setDate(new Date().getDate() - 2)),
-//     exercises: [
-//       {
-//         type: "resistance",
-//         name: "Military Press",
-//         duration: 21,
-//         weight: 300,
-//         reps: 10,
-//         sets: 4
-//       }
-//     ]
-//   }
-// ];
+  {
+    day: new Date(new Date().setDate(new Date().getDate() - 3)),
+    exercises: [
+      {
+        type: "resistance",
+        name: "Bench Press",
+        duration: 22,
+        weight: 300,
+        reps: 10,
+        sets: 4
+      }
+    ]
+  },
+  {
+    day: new Date(new Date().setDate(new Date().getDate() - 2)),
+    exercises: [
+      {
+        type: "resistance",
+        name: "Military Press",
+        duration: 21,
+        weight: 300,
+        reps: 10,
+        sets: 4
+      }
+    ]
+  }
+];
 
 db.Workout.deleteMany({})
   .then(() => db.Workout.collection.insertMany(workoutSeed))
